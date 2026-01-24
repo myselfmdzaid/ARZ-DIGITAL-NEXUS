@@ -85,7 +85,7 @@ Building this wasn't smooth sailing. Here are the major hurdles I encountered an
 
 **Assistance:**
 *   **AI Support (30%):** Used for debugging complex regex patterns, optimizing the grid layout CSS, and troubleshooting the specific API integration parameters for Web3Forms. The core logic and creative direction are 100% human-made.
-
+* Link : https://myselfmdzaid.github.io/ARZ-DIGITAL-NEXUS
 ---
 
 *© 2026 ARZ Digital Nexus. All Rights Reserved.*
