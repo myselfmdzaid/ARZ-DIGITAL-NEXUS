@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARZ Tech Universe | Creative Digital Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="main-container">
+        <header>
+            <div class="logo">ARZ DIGITAL NEXUS</div>
+            <nav>
+                <ul>
+                    <li><a href="#services" class="nav-btn">Services</a></li>
+                    <li><a href="#contact" class="nav-btn">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-text-wrapper">
+                        <span class="arz-bg-text">ARZ</span>
+                        <p class="subtitle">WELCOME TO THE FUTURE OF</p>
+                        <h1 class="glitch-text" data-text="Tech Services">Tech Services</h1>
+                        <p class="description">Elevate your digital presence with ARZ. Creative, Fast, and Futuristic.</p>
+                    </div>
+                    <button class="cta-button" onclick="scrollToServices()">Explore Services</button>
+                </div>
+            </section>
+
+            <section id="services" class="services-section">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid" id="services-grid">
+                    <!-- Services will be injected via JS -->
+                </div>
+                
+                <div class="student-zone">
+                    <a href="https://myselfmdzaid.github.io/OnTimeTech-by-ARZ" target="_blank" class="student-btn">
+                        <i class="fa-solid fa-graduation-cap"></i> FOR STUDENTS
+                    </a>
+                </div>
+            </section>
+
+            <section id="contact" class="contact-section">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Contact Details</h3>
+                        <p><i class="fa-solid fa-user"></i> <strong>Name:</strong> ARZ</p>
+                        <p><a href="mailto:iaestheticarz@gmail.com"><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> iaestheticarz@gmail.com</a></p>
+                        <p><a href="https://wa.me/918446498213" target="_blank"><i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp:</strong> +91 8446498213</a></p>
+                    </div>
+                    
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="4b40eccb-2301-4448-8d2d-5a7c0d8cba55">
+                        <input type="hidden" name="subject" value="New Service Enquiry - ARZ Digital Nexus">
+                        <input type="hidden" name="from_name" value="ARZ Digital Nexus Website">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Your Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Enquiry Request <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 ARZ DIGITAL NEXUS. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Service Details Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <i id="modal-icon" class="fa-solid fa-code"></i>
+                <h2 id="modal-title">Service Title</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modal-description">Description goes here...</p>
+                <div id="modal-details" class="details-list"></div>
+                <a href="#contact" class="modal-cta" onclick="closeModal()">Get This Service</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
