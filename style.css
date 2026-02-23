@@ -8,6 +8,105 @@
     --card-border: rgba(255, 255, 255, 0.1);
     --font-heading: 'Orbitron', sans-serif;
     --font-body: 'Rajdhani', sans-serif;
+    /* Theme-aware extras */
+    --header-bg: rgba(15, 12, 41, 0.85);
+    --contact-bg: #16123a;
+    --form-input-bg: #0f0c29;
+    --form-input-border: #302b63;
+    --modal-bg: #1e1b4b;
+    --footer-color: rgba(255, 255, 255, 0.6);
+    --footer-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ── LIGHT THEME ──────────────────────────────────────────── */
+[data-theme="light"] {
+    --primary-color: #0080cc;
+    --secondary-color: #005fa3;
+    --accent-color: #e0006e;
+    --bg-dark: #f0f4ff;
+    --text-color: #1a1a2e;
+    --card-bg: #ffffff;
+    --card-border: rgba(0, 128, 204, 0.15);
+    --header-bg: rgba(255, 255, 255, 0.9);
+    --contact-bg: #e8edf9;
+    --form-input-bg: #ffffff;
+    --form-input-border: #a0b4cc;
+    --modal-bg: #ffffff;
+    --footer-color: rgba(26, 26, 46, 0.6);
+    --footer-border: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .background-animation {
+    background: radial-gradient(circle at center, #d6e4ff 0%, #f0f4ff 100%);
+}
+
+[data-theme="light"] .blob-1 {
+    background: linear-gradient(to right, #ff80bf, #c084fc);
+    opacity: 0.25;
+}
+
+[data-theme="light"] .blob-2 {
+    background: linear-gradient(to left, #7dd3fc, #93c5fd);
+    opacity: 0.25;
+}
+
+[data-theme="light"] .blob-3 {
+    background: #fde68a;
+    opacity: 0.2;
+}
+
+[data-theme="light"] .arz-bg-text {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .glitch-text::before {
+    color: #0080cc;
+}
+
+[data-theme="light"] .glitch-text::after {
+    color: #e0006e;
+}
+
+[data-theme="light"] .service-card {
+    box-shadow: 0 8px 24px rgba(0, 128, 204, 0.12);
+}
+
+[data-theme="light"] .contact-info p {
+    background: rgba(0, 128, 204, 0.07);
+}
+
+[data-theme="light"] .contact-info p:hover {
+    background: rgba(0, 128, 204, 0.14);
+}
+
+[data-theme="light"] .contact-info a {
+    color: var(--text-color);
+}
+
+[data-theme="light"] #contact-form input,
+[data-theme="light"] #contact-form textarea {
+    color: var(--text-color);
+    background: var(--form-input-bg);
+    border-color: var(--form-input-border);
+}
+
+[data-theme="light"] .service-card h3 {
+    color: #1a1a2e;
+}
+
+[data-theme="light"] .service-card p {
+    color: #555577;
+}
+
+[data-theme="light"] .hero-content p {
+    color: #2a2a4a;
+}
+
+[data-theme="light"] .subtitle {
+    color: var(--secondary-color);
 }
 
 * {
@@ -75,8 +174,13 @@ body {
 }
 
 @keyframes float {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(30px, 50px) scale(1.1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(30px, 50px) scale(1.1);
+    }
 }
 
 /* Watermark & Glitch Container */
@@ -102,14 +206,22 @@ body {
     white-space: nowrap;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: blur(2px);
     animation: pulseBg 6s ease-in-out infinite alternate;
 }
 
 @keyframes pulseBg {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.03; }
-    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.06; }
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.03;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.06;
+    }
 }
 
 /* Glitch Text Effect - Enhanced & Cleaned */
@@ -153,12 +265,29 @@ body {
 }
 
 @keyframes glitch-vibrate {
-    0% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-    100% { transform: translate(0); }
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
 }
 
 /* Main Container - Removed Glass Effect */
@@ -176,16 +305,26 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
     padding: 1rem 2rem;
     margin-bottom: 2rem;
-    background: rgba(15, 12, 41, 0.8);
+    background: var(--header-bg);
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--card-border);
     position: sticky;
     top: 20px;
     z-index: 100;
     backdrop-filter: blur(10px);
+    transition: background 0.4s ease, border-color 0.4s ease;
 }
+
+/* Nav sits between logo and theme pill */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+
 
 .logo h1 {
     font-family: var(--font-heading);
@@ -313,8 +452,10 @@ nav ul {
 .service-card::after {
     content: '';
     position: absolute;
-    top: -2px; bottom: -2px;
-    left: -2px; right: -2px;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color), #ffcc00);
     z-index: -1;
     border-radius: 20px;
@@ -403,8 +544,10 @@ nav ul {
 .student-btn::before {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: #ffcc00;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -429,10 +572,11 @@ nav ul {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 4rem;
-    background: #16123a;
+    background: var(--contact-bg);
     padding: 3rem;
     border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--card-border);
+    transition: background 0.4s ease;
 }
 
 .contact-info h3 {
@@ -472,10 +616,10 @@ nav ul {
 #contact-form textarea {
     width: 100%;
     padding: 15px;
-    background: #0f0c29;
-    border: 2px solid #302b63;
+    background: var(--form-input-bg);
+    border: 2px solid var(--form-input-border);
     border-radius: 10px;
-    color: #fff;
+    color: var(--text-color);
     font-family: var(--font-body);
     font-size: 1.1rem;
     transition: all 0.3s;
@@ -510,7 +654,8 @@ nav ul {
 
 /* Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -530,7 +675,7 @@ nav ul {
 }
 
 .modal-content {
-    background: #1e1b4b;
+    background: var(--modal-bg);
     margin: auto;
     padding: 0;
     border: 2px solid var(--primary-color);
@@ -540,7 +685,7 @@ nav ul {
     box-shadow: 0 0 50px rgba(0, 242, 254, 0.3);
     position: relative;
     transform: scale(0.8);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.4s ease;
     overflow: hidden;
 }
 
@@ -633,18 +778,111 @@ footer {
     text-align: center;
     margin-top: 4rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--footer-border);
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--footer-color);
     letter-spacing: 1px;
     text-transform: uppercase;
+    transition: color 0.4s ease;
+}
+
+/* ── THEME SWITCHER — Desktop ─────────────────────────────── */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--card-border);
+    border-radius: 30px;
+    padding: 5px 8px;
+    transition: background 0.4s;
+}
+
+.theme-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s, color 0.25s, transform 0.2s;
+    opacity: 0.55;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.theme-btn.active {
+    background: var(--primary-color);
+    color: #000;
+    opacity: 1;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* ── THEME SWITCHER — Mobile ──────────────────────────────── */
+.theme-switcher-mobile {
+    display: none;
+    /* Hidden on desktop */
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 0.25rem;
+}
+
+.theme-btn-mobile {
+    flex: 1;
+    max-width: 110px;
+    padding: 8px 10px;
+    border-radius: 25px;
+    border: 1.5px solid var(--card-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    opacity: 0.65;
+    transition: background 0.25s, color 0.25s, opacity 0.25s, box-shadow 0.25s;
+}
+
+.theme-btn-mobile:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-btn-mobile.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #000;
+    opacity: 1;
+    box-shadow: 0 0 12px var(--primary-color);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .glitch-text { font-size: 4rem; }
-    .arz-bg-text { font-size: 12rem; }
-    .section-title { font-size: 2.5rem; }
+    .glitch-text {
+        font-size: 4rem;
+    }
+
+    .arz-bg-text {
+        font-size: 12rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -655,16 +893,24 @@ footer {
     .glitch-text {
         font-size: 2.8rem;
     }
-    
+
     .arz-bg-text {
         font-size: 8rem;
     }
-    
+
     header {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
         padding: 1.5rem;
         border-radius: 20px;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
     }
 
     nav ul {
@@ -672,13 +918,23 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
+    /* Hide desktop theme switcher on mobile */
+    .theme-switcher {
+        display: none;
+    }
+
+    /* Show mobile theme switcher */
+    .theme-switcher-mobile {
+        display: flex;
+    }
+
     .contact-container {
         grid-template-columns: 1fr;
         padding: 1.5rem;
         gap: 2rem;
     }
-    
+
     .service-card {
         padding: 1.5rem;
     }
